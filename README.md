@@ -12,7 +12,7 @@ que corresponden a un node maestro (nodemaster) y dos nodos de datos (node1, nod
 
 2. Descargar e instalar desde https://developer.hashicorp.com/vagrant/downloads
 
-3. Ejecutar vagrant up para crear las tres maquinas virtuales
+3. Ejecutar ```vagrant up``` para crear las tres maquinas virtuales
 
 4. Ejecutar 
 ```
