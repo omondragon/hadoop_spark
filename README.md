@@ -20,52 +20,48 @@ maquinas virtuales
 # Correr aplicación de prueba
 
 1. Conectarse al nodemaster
-
+```
 vagrant ssh nodemaster
-
+```
 2. Cambiar a usuario hadoop
-
+```
 su hadoop
-
+```
 El password solicitado es hadoop
 
 3. Subir video de prueba al sistema de archivos distribuido (HDFS)
-
+```
 cd /vagrant/media
-
+hadoop@nodemaster:/vagrant$ hdfs dfs -ls
 hdfs dfs -put corto30s1.mov  vids
 hdfs dfs -put corto30s3.mov  vids
-
+hdfs dfs -ls vids
+```
 4. Ejecutar aplicacion de conteo vehicular
-
+```
 cd /vagrant/src
-
-./run_traffic.sh
-
+hadoop@nodemaster:/vagrant/src$ ./run_traffic.sh 
+```
 5. Los videos resultantes estaran en la carpeta /tmp del node1.
 
 Ejecutar:
-
+```
 ssh node1
-
 cd /tmp
-
 ls
-
+```
 El nombre del video original tendra un prefijo "ori" y el del resultante un
 prefijo "rs". Por ejemplo,
-
+```
 ori-4841c4fc-f3f9-11e8-8f7b-0800275f82b1.mp4
-
 rs-4841c4fc-f3f9-11e8-8f7b-0800275f82b1.avi
-
+```
 Para extraer estos videos los puede copiar al directorio sincronizado de Vagrant
 
 Por ejemplo:
-
+```
 cp /tmp/ori-4841c4fc-f3f9-11e8-8f7b-0800275f82b1.mp4  /vagrant/ori-4841c4fc-f3f9-11e8-8f7b-0800275f82b1.mp4
-
 cp /tmp/ori-4841c4fc-f3f9-11e8-8f7b-0800275f82b1.mp4 /vagrant/rs-4841c4fc-f3f9-11e8-8f7b-0800275f82b1.avi
-
+```
 De esta manera los videos quedaran disponibles en el directorio raiz del proyecto
 en la maquina anfitriona.
