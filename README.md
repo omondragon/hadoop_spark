@@ -14,8 +14,13 @@ que corresponden a un node maestro (nodemaster) y dos nodos de datos (node1, nod
 
 3. Ejecutar vagrant up para crear las tres maquinas virtuales
 
-4. Ejecutar vagrant ssh node1, vagrant ssh node2 o vagrant ssh nodemaster para ingresar a las
-maquinas virtuales
+4. Ejecutar 
+```
+vagrant ssh node1
+vagrant ssh node2 o 
+vagrant ssh nodemaster 
+```
+para ingresar a las maquinas virtuales
 
 # Correr aplicación de prueba
 
