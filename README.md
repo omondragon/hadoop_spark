@@ -6,7 +6,7 @@ y deteccion  de velocidad. Dicho algoritmo esta escrito en python y
 usa OpenCV. El cluster esta conformado por dos maquinas virtuales
 que corresponden a un node maestro (nodemaster) y dos nodos de datos (node1, node2) hadoop.
 
-## COMO USAR ESTE REPOSITORIO
+# Cómo usar este repositorio
 
 1. Descargar VirtualBox desde https://www.virtualbox.org/wiki/Downloads
 
@@ -17,7 +17,7 @@ que corresponden a un node maestro (nodemaster) y dos nodos de datos (node1, nod
 4. Ejecutar vagrant ssh node1, vagrant ssh node2 o vagrant ssh nodemaster para ingresar a las
 maquinas virtuales
 
-## CORRER APLICACION DE PRUEBA
+# Correr aplicación de prueba
 
 1. Conectarse al nodemaster
 
