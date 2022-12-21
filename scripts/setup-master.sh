@@ -65,3 +65,6 @@ echo "Creating needed directories in HDFS"
 sudo -H -u hadoop bash -c  "/home/hadoop/hadoop/bin/hdfs dfs -mkdir -p /user/hadoop"
 sudo -H -u hadoop bash -c  "/home/hadoop/hadoop/bin/hdfs dfs -mkdir /spark-logs"
 sudo -H -u hadoop bash -c  "/home/hadoop/hadoop/bin/hdfs dfs -mkdir vids"
+
+echo "Setting permissions to run_traffic.sh"
+sudo -H -u hadoop bash -c "chmod 755 /vagrant/src/run_traffic.sh"
