@@ -34,10 +34,25 @@ su hadoop
 ```
 El password solicitado es hadoop
 
-3. Subir video de prueba al sistema de archivos distribuido (HDFS)
+3. [Opcional] Si ha apagado o reiniciado las máquinas previamente debe iniciar yarn y HDFS
+```
+start-dfs.sh
+start-yarn.sh
+```
+4. Verifique los nodeos activos
+```
+yarn node -list
+2023-01-13 15:23:52,862 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at nodemaster/192.168.200.3:8032
+Total Nodes:2
+         Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
+     node1:46471	        RUNNING	       node1:8042	                           0
+     node2:44645	        RUNNING	       node2:8042	                           0
+```
+
+5. Subir video de prueba al sistema de archivos distribuido (HDFS)
 ```
 cd /vagrant/media
-hadoop@nodemaster:/vagrant$ hdfs dfs -ls
+hadoop@nodemaster:/vagrant/media$  hdfs dfs -ls
 hdfs dfs -put corto30s1.mov  vids
 hdfs dfs -put corto30s3.mov  vids
 hdfs dfs -ls vids
