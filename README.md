@@ -8,9 +8,9 @@ que corresponden a un node maestro (nodemaster) y dos nodos de datos (node1, nod
 
 # Cómo usar este repositorio
 
-1. Descargar VirtualBox desde https://www.virtualbox.org/wiki/Downloads
+1. Descargar e instalar VirtualBox desde https://www.virtualbox.org/wiki/Downloads
 
-2. Descargar e instalar desde https://developer.hashicorp.com/vagrant/downloads
+2. Descargar e instalar Vagrant desde https://developer.hashicorp.com/vagrant/downloads
 
 3. Ejecutar ```vagrant up``` para crear las tres maquinas virtuales
 
