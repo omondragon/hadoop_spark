@@ -39,7 +39,9 @@ El password solicitado es hadoop
 start-dfs.sh
 start-yarn.sh
 ```
-4. Verifique los nodeos activos
+Verifique el dashboard de Hadoop en ```http://192.168.200.3:8088/cluster```
+
+4. Verifique los nodeos activos usando ``` yarn node -list ```. Debe obtener una salida como:
 ```
 yarn node -list
 2023-01-13 15:23:52,862 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at nodemaster/192.168.200.3:8032
@@ -57,14 +59,31 @@ hdfs dfs -put corto30s1.mov  vids
 hdfs dfs -put corto30s3.mov  vids
 hdfs dfs -ls vids
 ```
-4. Ejecutar aplicacion de conteo vehicular
+6. Ejecutar aplicacion de conteo vehicular
 ```
 cd /vagrant/src
 hadoop@nodemaster:/vagrant/src$ ./run_traffic.sh 
 ```
-5. Los videos resultantes estaran en la carpeta /tmp del node1.
+Debe obtener una respuesta como:
+```
+23/01/13 15:55:33 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: node2
+	 ApplicationMaster RPC port: 46465
+	 queue: default
+	 start time: 1673625230579
+	 final status: SUCCEEDED
+	 tracking URL: http://nodemaster:8088/proxy/application_1673623197464_0001/
+	 user: hadoop
+23/01/13 15:55:33 INFO ShutdownHookManager: Shutdown hook called
+23/01/13 15:55:33 INFO ShutdownHookManager: Deleting directory /tmp/spark-5046cd61-80bb-4b65-9424-7fb96c8b7081
+23/01/13 15:55:33 INFO ShutdownHookManager: Deleting directory /tmp/spark-3461053a-3edc-4dc3-ab1e-5c6ff377030f
+```
 
-Ejecutar:
+5. Los videos resultantes estaran en la carpeta /tmp de uno de los nodos. Puede verificar el nodo asignado en el dashboard de Hadoop en ```http://192.168.200.3:8088/cluster```
+
+Para verificar en el nodo 1, ejecutar:
 ```
 ssh node1
 cd /tmp
