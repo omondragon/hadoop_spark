@@ -55,8 +55,8 @@ Total Nodes:2
 ```
 cd /vagrant/media
 hadoop@nodemaster:/vagrant/media$  hdfs dfs -ls
-hdfs dfs -put corto30s1.mov  vids
-hdfs dfs -put corto30s3.mov  vids
+hdfs dfs -put corto10s1.mov  vids
+hdfs dfs -put corto10s2.mov  vids
 hdfs dfs -ls vids
 ```
 6. Ejecutar aplicacion de conteo vehicular
