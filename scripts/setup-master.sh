@@ -19,14 +19,14 @@ sshpass -p 'hadoop' ssh-copy-id -o StrictHostKeyChecking=no -i /home/hadoop/.ssh
 sshpass -p 'hadoop' ssh-copy-id -o StrictHostKeyChecking=no -i /home/hadoop/.ssh/id_rsa.pub hadoop@node2
 
 echo "Download Hadoop"
-su -l hadoop -c "wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz > .null;
-tar -xzf hadoop-3.3.4.tar.gz > .null;
-mv hadoop-3.3.4 hadoop"
+su -l hadoop -c "wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz > .null;
+tar -xzf hadoop-3.3.6.tar.gz > .null;
+mv hadoop-3.3.6 hadoop"
 
 echo "Install Spark"
-su -l hadoop -c "wget https://dlcdn.apache.org/spark/spark-3.3.2/spark-3.3.2-bin-hadoop3.tgz
-tar -xvf spark-3.3.2-bin-hadoop3.tgz
-mv spark-3.3.2-bin-hadoop3 spark"
+su -l hadoop -c "wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz
+tar -xvf spark-3.5.0-bin-hadoop3.tgz
+mv spark-3.5.0-bin-hadoop3 spark"
 
 echo "Set Environment Variables"
 echo "export HADOOP_HOME=/home/hadoop/hadoop
